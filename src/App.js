@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state ={
-      data: {},
+      data: null,
     }
   }  
 
@@ -15,7 +15,7 @@ class App extends Component {
   }
   
   fetchData = () => {
-    fetch('https://simpsons-quotes-api.herokuapp.com/quotes?count=8')
+    fetch('https://simpsons-quotes-api.herokuapp.com/quotes')
     .then(res => res.json())
     .then(data => this.setState({ 
       data, 
@@ -23,10 +23,11 @@ class App extends Component {
   }
 
   render() {
+    // console.log(this.state)
     return(
      <div>
-       <button type='button'>Simpson's Quote</button>
-       <QuoteCard quote={data.quoteSimpson} />
+       <button onClick={this.fetchData} type='button'>Simpson's Quote</button>
+        {this.state.data && <QuoteCard quote={this.state.data} />}
      </div>
     )
   }
