@@ -4,11 +4,14 @@ const QuoteCard = (props) => {
   console.log(props.quote[0])
 
   return(
-    <>
-      <div>Quote:{props.quote[0].quote} </div>
-      <div>Character: </div>
-      <div>Image: </div>
-    </>
+    <div className="quote">
+      <img src = {props.quote[0].image} />
+      <div className="card">
+        <div>Character: {props.quote[0].character} 
+          <p>Quote:{props.quote[0].quote} </p>
+        </div>
+      </div>
+    </div>
   )
 }
 

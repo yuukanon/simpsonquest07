@@ -26,8 +26,8 @@ class App extends Component {
     // console.log(this.state)
     return(
      <div>
-       <button onClick={this.fetchData} type='button'>Simpson's Quote</button>
         {this.state.data && <QuoteCard quote={this.state.data} />}
+        <button onClick={this.fetchData} type='button'>Simpson's Quote</button>
      </div>
     )
   }
